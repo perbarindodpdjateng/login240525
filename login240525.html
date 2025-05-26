@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer Aman</title>
+    <style> 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        #login-container, #viewer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        #viewer-container {
+            display: none;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        a {
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = "1"; // Memastikan halaman segera tampil
+        });
+
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "peserta" && password === "240525") {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("viewer-container").style.display = "flex";
+            } else {
+                alert("Username atau password salah!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="login-container" loading = lazy> 
+        Materi Seminar Nasional Perbarindo<br>
+        Masa Depan Ekonomi dan Daya Saing Dalam Implementasi Teknologi Untuk Memperkuat Daya Saing BPR-BPRS<br>
+        Yogya, 24 Mei 2025<br>        
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkLogin()">Login</button>
+    </div>
+
+    <div id="viewer-container">
+        <h2>Materi PDF Anda</h2>
+        <p>Silakan unduh materi PDF dengan mengklik tautan di bawah:</p>
+        <a href="https://drive.google.com/file/d/1DNPow5elkm8S2v3avwUE4NxmIsyu6xtk/view?usp=sharing" download>Download PDF - Dr. Musthofa - Anggota Komisi XI DPR RI</a>
+        <a href="https://drive.google.com/file/d/1WFDnhuSrXlODBVCj0vkAjaDuIedDwqVW/view?usp=sharing" download>Download PDF - Monang Siringoringo - Direktur Group Sistem Informasi LPS</a>
+        <a href="https://drive.google.com/file/d/1ews4Lvm4hbxEgCadq-epScun__JAQf6i/view?usp=sharing" download>Download PDF - Sunarsip - Pengamat Ekonomi dan Perbankan</a>
+    </div>
+</body>
+</html>
